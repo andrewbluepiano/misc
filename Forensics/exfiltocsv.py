@@ -25,8 +25,8 @@ def main():
 					# Snip out filename, write to CSV
 					csvwriter.writerow(["Filename", line[9:]])
 				# Else line is metadata tag:val pair
-				else:
-					lineData = line.split(" : ")
+				elif line[32] == ":":
+					lineData = [line[0:31], line[33:]]
 					mdKey = lineData[0].strip()
 					mdTags.add(mdKey)
 					mdVal = lineData[1].strip()
