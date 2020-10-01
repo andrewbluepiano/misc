@@ -26,7 +26,7 @@ def main():
 					csvwriter.writerow(["Filename", line[9:]])
 				# Else line is metadata tag:val pair
 				else:
-					lineData = line.split(":")
+					lineData = line.split(" : ")
 					mdKey = lineData[0].strip()
 					mdTags.add(mdKey)
 					mdVal = lineData[1].strip()
