@@ -1,7 +1,7 @@
 # Filename: 	exiftocsv.py
 # Author: 		Andrew Afonso
 # Description:	Reads in a plaintext file that contains the output of Phil Harvey's ExifTool file, and outputs
-#				a csv file containing the data.
+#				a csv file containing the data, as well as a CSV containing a list of tag types found. 
 import csv
 import os
 import sys
@@ -32,7 +32,7 @@ def main():
 					mdVal = lineData[1].strip()
 					csvwriter.writerow([mdKey, mdVal])
 					
-	
+	# Create list of tags found
 	with open('mdTags.csv', 'w', newline='') as mdTagFile:
 		tagcsvwriter = csv.writer(mdTagFile)
 		mdTags = sorted(mdTags)
