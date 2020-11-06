@@ -1,6 +1,7 @@
-# Just a script for the commands from https://www.reddit.com/r/Kalilinux/comments/iujz11/installing_php_56_on_kali_linux/
-# Intended to be used to get PHP v5.6 onto a Kali rolling machine. 
+# Intended to be used to get Apache2 and PHP v5.6 onto a Kali rolling machine. 
 sudo su
+apt-get update
+apt-get install apache2
 rm /etc/apt/sources.list.d/php.list 2>/dev/null && \
 apt-get -y install apt-transport-https && \
 wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add - && \
