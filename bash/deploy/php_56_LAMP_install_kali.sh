@@ -1,7 +1,8 @@
-# Intended to be used to get Apache2 and PHP v5.6 onto a Kali rolling machine. 
+# Intended to be used to get Apache2, MariaDB, and PHP v5.6 onto a Kali rolling machine. 
 sudo su
-apt-get update
-apt-get install apache2
+apt-get -y update
+apt-get -y install apache2
+apt-get -y install mariadb-server
 rm /etc/apt/sources.list.d/php.list 2>/dev/null && \
 apt-get -y install apt-transport-https && \
 wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add - && \
