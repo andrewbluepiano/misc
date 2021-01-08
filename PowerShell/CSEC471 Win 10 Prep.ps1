@@ -85,3 +85,20 @@ if($doesOuterExist -eq $true){ # If entry does exist, prompt to override.
         Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppHost -Name EnableWebContentEvaluation -Value 0 
     }
 }
+
+# Disable SmartScreen overall
+$doesOuterExist = Test-Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\System' # Check if relevant system key already exists.
+if($doesOuterExist -eq $false){ # If System Key doesnt exist
+    $pickSix = $Host.UI.PromptForChoice($title, "Disable SmartScreen Fully?", $choices, $default)
+    if ($pickSix -eq 0){
+        Set-Location HKLM:\SOFTWARE\Policies\Microsoft\Windows\
+        New-Item -Path . -Name System
+        New-ItemProperty -Path .\System -Name EnableSmartScreen -Value 0 -PropertyType DWord
+    }
+}
+if($doesOuterExist -eq $true){ # If entry does exist, prompt to override. 
+    $pickSix = $Host.UI.PromptForChoice($title, "Disable SmartScreen completely?`n(This will overwrite the existing registry value to disable SmartScreen)", $choices, $default)
+    if ($pickSix -eq 0){
+        Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\System -Name EnableSmartScreen -Value 0 
+    }
+}
