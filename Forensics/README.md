@@ -1,5 +1,3 @@
-## Lab5_MetaData_Script.sh
-
 ## exiftocsv.py
 Reads in a plaintext file that contains the output of Phil Harvey's ExifTool file, and outputs a csv file containing the data.
 
