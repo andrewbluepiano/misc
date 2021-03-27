@@ -1,5 +1,4 @@
 # Author: 		Andrew Afonso
-# Assignment:	3
 # Filename: 	myServer.py
 # Tab Width:	4
 ###########
