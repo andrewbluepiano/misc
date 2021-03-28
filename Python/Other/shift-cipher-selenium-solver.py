@@ -1,5 +1,6 @@
 # Author: Andrew Afonso
-# Description: Program to solve a CTF question. Correctly consecucitively solves shift ciphers provided on a web page, then enters the plaintext. 
+# Description: Program to solve a CTF question for a web based CTF. 
+# Description: Correctly consecucitively solves shift ciphers provided on a web page, then enters the plaintext. 
 ###
 # Requirements:
 # selenium
