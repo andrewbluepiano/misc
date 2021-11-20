@@ -4,6 +4,9 @@
 #               Untested on other models. 
 #
 # Note:         Default password for the access point is "raspberry"
+#
+# Warning:      This script clears out any installations and configurations for the packages hostapd and dnsmasq, 
+#               then reinstalls them and configures them from scratch. 
 
 if [ "$EUID" -ne 0 ]
   	then echo "Please run this as root"
