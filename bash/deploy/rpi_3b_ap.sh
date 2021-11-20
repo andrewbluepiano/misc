@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Description:  A script to deploy an AP without internet connectivity on a Raspberry Pi 3B.
+# Description:  A script to deploy an AP that works with or without internet connectivity on a Raspberry Pi 3B.
 #               Untested on other models. 
+#
+# Note:         Default password for the access point is "raspberry"
 
 if [ "$EUID" -ne 0 ]
   	then echo "Please run this as root"
@@ -9,7 +11,6 @@ if [ "$EUID" -ne 0 ]
   	exit
 fi
   
-
 apt-get update -y
 apt-get remove --purge hostapd dnsmasq -y
 apt-get install hostapd dnsmasq -y
